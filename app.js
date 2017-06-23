@@ -11,13 +11,16 @@ app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.get('/', function(req, res) {
+	res.render('home');
+})
 
 var port = process.env.PORT || 8080;
-var router = express.Router();
+// var router = express.Router();
 
-router.get('/', server);
+// router.get('/', server);
 
-app.use('/watercolor', router);
+// app.use('/watercolor', router);
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
